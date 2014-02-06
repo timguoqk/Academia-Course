@@ -1,0 +1,35 @@
+h1 Listing courses
+
+table
+  tr
+    th Teacher
+    th Photo
+    th Title
+    th Gpa
+    th Grade
+    th Intro text
+    th Gp text
+    th Difficulty text
+    th Features text
+    th
+    th
+    th
+
+  - @courses.each do |course|
+    tr
+      td = course.teacher
+      td = course.photo
+      td = course.title
+      td = course.gpa
+      td = course.grade
+      td = course.intro_text
+      td = course.gp_text
+      td = course.difficulty_text
+      td = course.features_text
+      td = link_to 'Show', course
+      td = link_to 'Edit', edit_course_path(course)
+      td = link_to 'Destroy', course, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Course', new_course_path

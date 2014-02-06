@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  teacher: MyString
+  photo: MyString
+  title: MyString
+  gpa: 1.5
+  grade: 1.5
+  intro_text: MyText
+  gp_text: MyText
+  difficulty_text: MyText
+  features_text: MyText
+
+two:
+  teacher: MyString
+  photo: MyString
+  title: MyString
+  gpa: 1.5
+  grade: 1.5
+  intro_text: MyText
+  gp_text: MyText
+  difficulty_text: MyText
+  features_text: MyText

@@ -1,0 +1,33 @@
+p#notice = notice
+
+p
+  strong Teacher:
+  = @course.teacher
+p
+  strong Photo:
+  = @course.photo
+p
+  strong Title:
+  = @course.title
+p
+  strong Gpa:
+  = @course.gpa
+p
+  strong Grade:
+  = @course.grade
+p
+  strong Intro text:
+  = @course.intro_text
+p
+  strong Gp text:
+  = @course.gp_text
+p
+  strong Difficulty text:
+  = @course.difficulty_text
+p
+  strong Features text:
+  = @course.features_text
+
+= link_to 'Edit', edit_course_path(@course)
+'|
+= link_to 'Back', courses_path

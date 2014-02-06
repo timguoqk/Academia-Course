@@ -1,0 +1,13 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  host: localhost
+development:
+  <<: *default
+  database: academia_dev
+test:
+  <<: *default
+  database: academia_test
+production: <%= ENV["RAILS_DATABASE_URL"] %>
