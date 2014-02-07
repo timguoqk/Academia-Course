@@ -1,31 +1,88 @@
-p
-  strong Teacher:
-  = @course.teacher
-p
-  strong Photo:
-  = image_tag(@course.photo_url(:thumb)) if @course.photo?
-p
-  strong Title:
-  = @course.title
-p
-  strong Gpa:
-  = @course.gpa
-p
-  strong Grade:
-  = @course.grade
-p
-  strong Intro text:
-  = @course.intro_text
-p
-  strong Gp text:
-  = @course.gp_text
-p
-  strong Difficulty text:
-  = @course.difficulty_text
-p
-  strong Features text:
-  = @course.features_text
+.container
+  .row
+    .col-md-10
+      .acd.page
+        .acd.main.content
+          .header
+            .labels
+              a.text 课程介绍 - 
+              = @course.title
+          .body
+            .title
+              .content
+                header.acd
+                  h3.title
+                    a.title = @course.title
+                  span.sub.title
+                    span.subject 这个区域不知道放什么好
+                    | &nbsp;-&nbsp;
+                    span.timeago = @course.teacher 
+                    | 老师
+              .acd.tip
+                .items
+                  .acd.item
+                    span.acd.tip-holder
+                    a.acd.tip-content.shadow 
+                      | @course.subject
 
-= link_to 'Edit', edit_course_path(@course)
-'|
-= link_to 'Back', courses_path
+              .acd.avatar
+                  = image_tag(@course.photo_url(:thumb)) if @course.photo?
+            .acd.article
+              .description
+                .text
+                  .content
+                    = @course.intro_text
+            .acd.panel-group id="extend-text"
+              .acd.panel.panel-default
+                .panel-heading
+                  h4.panel-title 
+                    a data-toggle="collapse" data-parent="#extend-text" href="#gpd" 积点难度
+                #gpd.panel-collapse.collapse
+                  .panel-body
+                    | Obokata says that the idea that stressing cells might make them pluripotent came to her wdata-toggle attributes specifiedhen she was culturing cells and noticed that some, after being squeezed through a capillary tube, would shrink to a size similar to that of stem cells. She decided to try applying different kinds of stress, including heat, starvation and a high-calcium environment. Three stressors — a bacterial toxin that perforates the cell membrane, exposure to low pH and physical squeezing — were each able to coax the cells to show markers of pluripotency.
+              .acd.panel.panel-default
+                .panel-heading
+                  h4.panel-title 
+                    a data-toggle="collapse" data-parent="#extend-text" href="#cd" Content Difficulty
+                #cd.panel-collapse.collapse
+                  .panel-body
+                    | But to earn the name pluripotent, the cells had to show that they could turn into all cell types — demonstrated by injecting fluorescently tagged cells into a mouse embryo. If the introduced cells are pluripotent, the glowing cells show up in every tissue of the resultant mouse. This test proved tricky and required a change in strategy. Hundreds of mice made with help from mouse-cloning pioneer Teruhiko Wakayama at the University of Yamanashi, Japan, were only faintly fluorescent. Wakayama, who had initially thought that the project would probably be a “huge effort in vain”, suggested stressing fully differentiated cells from newborn mice instead of those from adult mice. This worked to produce a fully green mouse embryo.
+              .acd.panel.panel-default
+                .panel-heading
+                  h4.panel-title 
+                    a data-toggle="collapse" data-parent="#extend-text" href="#ft" Feature
+                #ft.panel-collapse.collapse
+                  .panel-body
+                    | Still, the whole idea was radical, and Obokata’s hope that glowing mice would be enough to win acceptance was optimistic. Her manuscript was rejected multiple times, she says.
+            .acd.controller
+              .acd.small.red.btn style="margin-right:8px"
+                span.glyphicon.glyphicon-heart
+                |   0
+              <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a></div>
+              <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{},"image":{"viewList":["weixin","renren","tsina","qzone","tqq"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["weixin","renren","tsina","qzone","tqq"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+    .col-md-4.col-md-offset-2
+      .acd.comments
+        .body
+          .padding-line
+          .many.comments
+            .find.more
+              .text
+                span.text More...
+            .haha.this.is.the.main.things
+              .here.we.go
+                .things.go.here
+                  - 20.times do |i|
+                    .media
+                      a.pull-left
+                        = image_tag('avatar_blank.png')
+                      .media.body
+                        h5.media.heading Lalalalala~
+                        | This is the #{i+1} time I want to Mohahahahahahahaha!! SOOOOOOO Funny!~~ Yahoo~
+
+            .say.something
+              textarea.acd
+              .acd.small.green.btn 发布
+.acd.float.tip style="top:55px;left:57%;"
+  .logo
+  .text 
+    span.text 排名：1

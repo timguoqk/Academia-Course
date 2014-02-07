@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    meta content="width=device-width, initial-scale=1.0" name="viewport"
+    title Academia
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "#{controller_name}", "data-turbolinks-track" => true 
+    = csrf_meta_tags
+  body class=("#{controller_name} #{action_name}") data-controller-name="#{controller_name} #{request.path}"
+  	
+  	nav.navbar.navbar-default.navbar-fixed-top.acd role="navigation"
+	    .navbar-header
+	      button.navbar-toggle type="button" id="mobile-menu"
+	        span.sr-only NavBar
+	        span.icon-bar
+	        span.icon-bar
+	        span.icon-bar
+	      a.navbar-brand.acd.logo
+	    .acd.collapse.navbar-collapse#example-navbar
+	      ul.nav.navbar-nav.main
+	        li.active
+	          a 全部
+	        li
+	          a link2
+	        li
+	          a link3
+	        li.dropdown
+               a.dropdown-toggle data-toggle="dropdown" href="#"
+                 | link4
+                 b.caret
+               ul.dropdown-menu.shadow.acd
+                 li
+                   a item1
+                 li
+                   a item2
+                 li
+                   a item3
+                 li
+                   a item4
+	      ul.nav.navbar-nav.navbar-right
+	        li
+	          a warn1
+	        li
+	          a warn2
+	
+	== yield

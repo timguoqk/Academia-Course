@@ -13,11 +13,16 @@
  * require_tree .
  *= require_self
  */
+//@import 'reset';
+
+
 @import 'variables';
 //Bootstrap Theme
 $font-family-sans-serif: arial,sans-serif;
 $text-color: #262626;
 $link-color: $blue-link;
+$grid-columns: 16;
+$grid-gutter-width: 0px;
 @import 'bootstrap';
 
 // Academia Custom Styles
