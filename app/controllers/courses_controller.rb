@@ -44,6 +44,13 @@ class CoursesController < ApplicationController
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
   def update
+    #if params[:course][:photo] and @course.photo
+    #  old_photo = Course.find(params[:id]).photo
+    #end
+    #if @course.update_attributes(params[:course])
+    #  old_photo.remove! if old_photo
+    #end
+
     respond_to do |format|
       if @course.update(course_params)
         format.html { redirect_to @course, notice: 'Course was successfully updated.' }

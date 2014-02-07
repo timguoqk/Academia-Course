@@ -5,7 +5,7 @@ p
   = @course.teacher
 p
   strong Photo:
-  = @course.photo
+  = image_tag(@course.photo_url(:thumb)) if @course.photo?
 p
   strong Title:
   = @course.title

@@ -11,7 +11,8 @@
     = f.text_field :teacher
   .field
     = f.label :photo
-    = f.text_field :photo
+    = image_tag(@course.photo_url(:thumb)) if @course.photo?
+    = f.file_field :photo
   .field
     = f.label :title
     = f.text_field :title

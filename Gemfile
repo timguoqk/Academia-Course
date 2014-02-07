@@ -59,7 +59,8 @@ gem 'mini_magick'
 gem 'piet'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'devise'
 
 # Others
 gem 'kaminari'

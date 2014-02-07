@@ -18,7 +18,7 @@ table
   - @courses.each do |course|
     tr
       td = course.teacher
-      td = course.photo
+      td = image_tag(course.photo_url(:thumb)) if course.photo?
       td = course.title
       td = course.gpa
       td = course.grade
