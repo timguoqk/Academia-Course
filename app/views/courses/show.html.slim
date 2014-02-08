@@ -5,7 +5,7 @@
         .acd.main.content
           .header
             .labels
-              a.text 课程介绍 - 
+              a.text 课程介绍 -
               = @course.title
           .body
             .title
@@ -16,13 +16,13 @@
                   span.sub.title
                     span.subject 这个区域不知道放什么好
                     | &nbsp;-&nbsp;
-                    span.timeago = @course.teacher 
+                    span.timeago = @course.teacher
                     | 老师
               .acd.tip
                 .items
                   .acd.item
                     span.acd.tip-holder
-                    a.acd.tip-content.shadow 
+                    a.acd.tip-content.shadow
                       | @course.subject
 
               .acd.avatar
@@ -35,21 +35,21 @@
             .acd.panel-group id="extend-text"
               .acd.panel.panel-default
                 .panel-heading
-                  h4.panel-title 
+                  h4.panel-title
                     a data-toggle="collapse" data-parent="#extend-text" href="#gpd" 积点难度
                 #gpd.panel-collapse.collapse
                   .panel-body
                     | Obokata says that the idea that stressing cells might make them pluripotent came to her wdata-toggle attributes specifiedhen she was culturing cells and noticed that some, after being squeezed through a capillary tube, would shrink to a size similar to that of stem cells. She decided to try applying different kinds of stress, including heat, starvation and a high-calcium environment. Three stressors — a bacterial toxin that perforates the cell membrane, exposure to low pH and physical squeezing — were each able to coax the cells to show markers of pluripotency.
               .acd.panel.panel-default
                 .panel-heading
-                  h4.panel-title 
+                  h4.panel-title
                     a data-toggle="collapse" data-parent="#extend-text" href="#cd" Content Difficulty
                 #cd.panel-collapse.collapse
                   .panel-body
                     | But to earn the name pluripotent, the cells had to show that they could turn into all cell types — demonstrated by injecting fluorescently tagged cells into a mouse embryo. If the introduced cells are pluripotent, the glowing cells show up in every tissue of the resultant mouse. This test proved tricky and required a change in strategy. Hundreds of mice made with help from mouse-cloning pioneer Teruhiko Wakayama at the University of Yamanashi, Japan, were only faintly fluorescent. Wakayama, who had initially thought that the project would probably be a “huge effort in vain”, suggested stressing fully differentiated cells from newborn mice instead of those from adult mice. This worked to produce a fully green mouse embryo.
               .acd.panel.panel-default
                 .panel-heading
-                  h4.panel-title 
+                  h4.panel-title
                     a data-toggle="collapse" data-parent="#extend-text" href="#ft" Feature
                 #ft.panel-collapse.collapse
                   .panel-body
@@ -71,18 +71,19 @@
             .haha.this.is.the.main.things
               .here.we.go
                 .things.go.here
-                  - 20.times do |i|
-                    .media
-                      a.pull-left
-                        = image_tag('avatar_blank.png')
-                      .media.body
-                        h5.media.heading Lalalalala~
-                        | This is the #{i+1} time I want to Mohahahahahahahaha!! SOOOOOOO Funny!~~ Yahoo~
 
-            .say.something
-              textarea.acd
-              .acd.small.green.btn 发布
+                    - for comment in @comments
+                      .media
+                        a.pull-left
+                          = image_tag('avatar_blank.png')
+                        .media.body
+                          h5.media.heading = comment.author_id
+                          = comment.content
+
+            = form_for([@course, @course.comments.build], html: {class: "say something"}) do |f|
+              = f.text_area :content, :class => "acd"
+              = f.submit '发布', :class => "acd small green btn"
 .acd.float.tip style="top:55px;left:57%;"
   .logo
-  .text 
+  .text
     span.text 排名：1
