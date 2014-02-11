@@ -20,9 +20,6 @@
     = f.label :gpa
     = f.text_field :gpa
   .field
-    = f.label :grade
-    = f.text_field :grade
-  .field
     = f.label :intro_text
     = f.text_area :intro_text
   .field
@@ -34,4 +31,10 @@
   .field
     = f.label :features_text
     = f.text_area :features_text
+  .field
+    = f.label :subject
+    = f.text_field :subject
+  .field
+    = f.label :ranking
+    = f.text_field :ranking
   .actions = f.submit 'Save'

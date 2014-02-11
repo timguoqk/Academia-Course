@@ -21,11 +21,13 @@ table
       td = image_tag(course.photo_url(:thumb)) if course.photo?
       td = course.title
       td = course.gpa
-      td = course.grade
-      td = course.intro_text
-      td = course.gp_text
-      td = course.difficulty_text
-      td = course.features_text
+      td == course.intro_text
+      td == course.gp_text
+      td == course.difficulty_text
+      td == course.features_text
+      td = course.subject
+      td = course.likes
+      td = course.ranking
       td = link_to 'Show', course
       td = link_to 'Edit', edit_course_path(course)
       td = link_to 'Destroy', course, data: {:confirm => 'Are you sure?'}, :method => :delete
