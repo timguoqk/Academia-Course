@@ -5,7 +5,9 @@
         .title
           .content
             .header.acd
-              .h3.title 注册账户
+              .h3.title 
+                div class = 'acd icon add user' 
+                |注册账户
         .acd.article
           = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
             = devise_error_messages!
@@ -15,22 +17,21 @@
             |不可更改什么的
             <br />
             = f.text_field :username, :autofocus => true
-
+            <br />
             = f.label :email
             <br />
             = f.email_field :email
-
+            <br />
             = f.label :password
             <br />
             = f.password_field :password
-
+            <br />
             = f.label :password_confirmation
             <br />
             = f.password_field :password_confirmation
-
-            = f.submit "Sign up"
+            <br />
+            = f.submit "Sign up", :class => 'acd big btn green'
 .col-md-5.col-md-offset-1
   .acd.page
-    .acd.comments.main.content
-      .body
-        = render "devise/shared/links"
+    .body
+      = render "devise/shared/links"
