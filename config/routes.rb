@@ -1,9 +1,11 @@
 AcademiaCourse::Application.routes.draw do
+  get 'courses/list'
   devise_for :users
   resources :courses do
     resources :comments
   end
 
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

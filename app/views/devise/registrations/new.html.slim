@@ -1,0 +1,36 @@
+.col-md-10
+  .acd.page
+    .acd.main.content
+      .body
+        .title
+          .content
+            .header.acd
+              .h3.title 注册账户
+        .acd.article
+          = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+            = devise_error_messages!
+
+            = f.label :username
+            <br />
+            |不可更改什么的
+            <br />
+            = f.text_field :username, :autofocus => true
+
+            = f.label :email
+            <br />
+            = f.email_field :email
+
+            = f.label :password
+            <br />
+            = f.password_field :password
+
+            = f.label :password_confirmation
+            <br />
+            = f.password_field :password_confirmation
+
+            = f.submit "Sign up"
+.col-md-5.col-md-offset-1
+  .acd.page
+    .acd.comments.main.content
+      .body
+        = render "devise/shared/links"
