@@ -1,6 +1,5 @@
 javascript:
   $("#example-navbar .navbar-nav li a[href*='courses']").parent().addClass("active")
-  $("#example-navbar .navbar-nav li a[href='/']").parent().removeClass("active")
   
 .col-md-10
   .acd.page
@@ -18,6 +17,8 @@ javascript:
               span.sub.title
                 span.subject = @course.teacher
                 | 老师
+                | &nbsp;-&nbsp;
+                span.timeago = @course.room
           .acd.tip
             .items
               .acd.item
@@ -36,7 +37,7 @@ javascript:
             .panel-heading
               h4.panel-title
                 a data-toggle="collapse" data-parent="#extend-text" href="#gpd" 刷积点难度&方法
-            #gpd.panel-collapse.collapse
+            #gpd.panel-collapse.collapse class="in"
               .panel-body == @course.gp_text
           .acd.panel.panel-default
             .panel-heading
@@ -51,6 +52,7 @@ javascript:
             #ft.panel-collapse.collapse
               .panel-body == @course.features_text
         .acd.controller
+          /= button_to "#{@course.likes}", { :controller => 'course', :action => 'like' }, { :class => "acd small red btn" }
           .acd.small.red.btn style="margin-right:8px"
             span.glyphicon.glyphicon-heart
               = @course.likes
@@ -61,8 +63,18 @@ javascript:
     .acd.comments.main.content
       .body
         .acd.article-info-header
+          .acd.title 课程信息
+        .acd.article
+          .description
+            .text
+              .content
+                li 课位：#{@course.position}
+                li 最大人数：#{@course.stu_quantity}
+                li 老师：#{@course.teacher}
+                li 教室：#{@course.room}
+        .acd.article-info-header
           .acd.title 评论
-          .acd.subtitle 如果你上过这么课或有意组团……
+          .acd.subtitle 如果你上过这门课或有意组团……
         .many.comments
           .haha.this.is.the.main.things
             .here.we.go

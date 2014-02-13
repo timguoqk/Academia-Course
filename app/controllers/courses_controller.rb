@@ -8,6 +8,11 @@ class CoursesController < ApplicationController
   def list
     
   end
+
+  def like
+    
+  end
+
   # GET /courses
   # GET /courses.json
   def index
@@ -17,7 +22,6 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @course = Course.find(params[:id])
     @comments = @course.comments
   end
 
