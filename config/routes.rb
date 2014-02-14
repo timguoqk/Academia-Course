@@ -1,5 +1,6 @@
 AcademiaCourse::Application.routes.draw do
-  get 'courses/list'
+  get 'courses/list_rank'
+  get 'courses/list_all'
   get 'about' => 'courses#about'
   devise_for :users
   resources :courses do

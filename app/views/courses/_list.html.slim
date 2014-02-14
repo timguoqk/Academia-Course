@@ -1,0 +1,12 @@
+ul.acd.list.page
+          - i = 0
+          - for course in @courses
+            li.acd.list.item
+              .number = i + 1
+              .content
+                .title
+                  = link_to course.title, course_path(id: course)
+                .sub-title
+                  == course.features_text
+                .sub-title
+                  = course.subject

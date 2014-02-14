@@ -8,7 +8,7 @@ javascript:
         .acd.main.content
           .header
             .labels
-              a.text 课程介绍 -
+              a.text 课程介绍:
               = @course.title
           .body
             .title
@@ -81,21 +81,36 @@ javascript:
               .haha.this.is.the.main.things
                 .here.we.go
                   .things.go.here
+                    <div id="disqus_thread"></div>
+                    javascript:
+                      var disqus_shortname = 'academia-bdfz';
+                      (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                      })();
+                    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+              / .haha.this.is.the.main.things
+              /   .here.we.go
+              /     .things.go.here
 
-                      - for comment in @comments
-                        .media
-                          a.pull-left
-                            = image_tag('avatar_blank.png')
-                          .media.body
-                            h5.media.heading = comment.author_id
-                            = comment.content
-                  </br>
-                  p 留下你的评论:
-              = form_for([@course, @course.comments.build], html: {class: "say something"}) do |f|
-                = f.text_area :content, :class => "acd"
-                = f.submit '发布', :class => "acd small green btn"
-    .acd.float.tip style="top:55px;left:57%;"
-      .logo
-      .text
-        span.text 排名：
-        = @course.ranking
+              /         - for comment in @comments
+              /           .media
+              /             a.pull-left
+              /               = image_tag('avatar_blank.png')
+              /             .media.body
+              /               h5.media.heading = comment.author_id
+              /               = comment.content
+              /     </br>
+              /     p 留下你的评论:
+              / = form_for([@course, @course.comments.build], html: {class: "say something"}) do |f|
+              /   = f.text_area :content, :class => "acd"
+              /   = f.submit '发布', :class => "acd small green btn"
+    - if @course.ranking != 0
+      .acd.float.tip style="top:55px;left:57%;"
+        .logo
+        .text
+          span.text 排名：
+          = @course.ranking

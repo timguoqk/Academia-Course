@@ -65,7 +65,7 @@ gem 'devise'
 
 # Others
 gem 'kaminari'
-gem 'rack-mini-profiler'
+#gem 'rack-mini-profiler'
 gem 'activerecord-session_store'
 gem 'rails-settings-cached'
 

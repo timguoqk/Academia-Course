@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
-  before_action :set_courses, only: [:welcome, :list, :index]
+  before_action :set_courses, only: [:welcome, :list_rank, :list_all, :index]
   def about
     
   end
@@ -9,8 +9,13 @@ class CoursesController < ApplicationController
 
   end
 
-  def list
-    
+  def list_rank
+    @courses = @courses.select { |e| e.ranking !=0  }
+    @courses.sort { |a,b| a.ranking < b.ranking }
+  end
+
+  def list_all
+
   end
 
   def like

@@ -16,7 +16,7 @@ html
 	        span.icon-bar
 	        span.icon-bar
 	        span.icon-bar
-	      a.navbar-brand.acd.logo
+	      a.navbar-brand.acd.logo href=root_path
 	    .acd.collapse.navbar-collapse#example-navbar
 	      ul.nav.navbar-nav.main
 	        li
@@ -24,7 +24,7 @@ html
 	        li
 	          = link_to '选课指南', courses_path
 	        li
-	          = link_to '关于', '/about'
+	          = link_to '关于', about_path
 	      ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               li 欢迎您,
@@ -33,3 +33,7 @@ html
             - else
               li = link_to '登录', new_user_session_path
     == yield
+    / .container
+    /   hr
+    /   footer 
+    /     <p>Website designed by <a href='https://github.com/timguoqk'>Qikun Guo</a> and <a href='https://github.com/cassiuschen'>Zisheng Chen</a>, members of the <a href='http://www.thecmw.cn'>Creative Media Workshop</a>.</p>
