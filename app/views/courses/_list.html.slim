@@ -8,4 +8,4 @@ ul.acd.list.page
                 .title
                   = link_to course.title, course_path(id: course)
                 .sub-title
-                  = truncate(strip_tags(course.features_text), length: 80)
+                  = truncate(strip_tags(course.features_text), length: 60)
