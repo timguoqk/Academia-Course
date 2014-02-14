@@ -1,5 +1,6 @@
 AcademiaCourse::Application.routes.draw do
   get 'courses/list'
+  get 'about' => 'courses#about'
   devise_for :users
   resources :courses do
     resources :comments

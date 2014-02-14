@@ -1,6 +1,15 @@
 javascript:
   $("#example-navbar .navbar-nav li a[href='/']").parent().addClass("active")
 
-h1 welcome
-| This's the index page!
-== link_to 'Courses', courses_path
+.jumbotron
+  .container
+    h1 Welcome to Academia
+    
+.container
+  .row
+    .col-md-10
+
+    .col-md-5.col-md-offset-1
+    h1 welcome
+    | This's the index page!
+    == link_to 'Courses', courses_path

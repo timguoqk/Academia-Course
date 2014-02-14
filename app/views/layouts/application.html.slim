@@ -22,7 +22,7 @@ html
 	        li
 	          = link_to '首页', root_path
 	        li
-	          = link_to '课程介绍', courses_path
+	          = link_to '选课指南', courses_path
 	        li
 	          = link_to '关于', '/about'
 	      ul.nav.navbar-nav.navbar-right
@@ -32,6 +32,4 @@ html
               li = link_to '登出', destroy_user_session_path
             - else
               li = link_to '登录', new_user_session_path
-	.container
-	  .row
-	    == yield
+    == yield

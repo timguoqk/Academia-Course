@@ -1,6 +1,10 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
   before_action :set_courses, only: [:welcome, :list, :index]
+  def about
+    
+  end
+  
   def welcome
 
   end
@@ -93,6 +97,6 @@ class CoursesController < ApplicationController
     
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:teacher, :photo, :title, :gpa, :grade, :intro_text, :gp_text, :difficulty_text, :features_text)
+      params.require(:course).permit(:teacher, :photo, :title, :gpa, :grade, :intro_text, :gp_text, :difficulty_text, :features_text, :likes, :ranking, :room, :position, :stu_quantity)
     end
 end
