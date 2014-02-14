@@ -7,5 +7,8 @@ javascript:
       .body
         .acd.article-info-header
           .acd.title 课程总览
-          .acd.subtitle 这里是Academia数据库内的全部课程
+          .acd.subtitle
+            |这里是Academia数据库内的全部课程，另有
+            = link_to '课程排名', courses_list_rank_path
+            |可供参考
         == render 'list'

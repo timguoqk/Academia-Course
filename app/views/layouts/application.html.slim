@@ -19,12 +19,9 @@ html
 	      a.navbar-brand.acd.logo href=root_path
 	    .acd.collapse.navbar-collapse#example-navbar
 	      ul.nav.navbar-nav.main
-	        li
-	          = link_to '首页', root_path
-	        li
-	          = link_to '选课指南', courses_path
-	        li
-	          = link_to '关于', about_path
+	        /li = link_to '首页', root_path
+	        li = link_to '选课指南', courses_path
+	        li = link_to '关于', about_path
 	      ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               li 欢迎您,
