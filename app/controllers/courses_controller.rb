@@ -1,6 +1,8 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
   before_action :set_courses, only: [:welcome, :list_rank, :list_all, :index]
+  before_action :check_dev, only: [:edit, :update, :new, :destroy]
+
   def about
     
   end
@@ -103,5 +105,11 @@ class CoursesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
       params.require(:course).permit(:teacher, :photo, :title, :gpa, :grade, :intro_text, :gp_text, :difficulty_text, :features_text, :likes, :ranking, :room, :position, :stu_quantity)
+    end
+
+    def check_dev
+      if Rails.env!="development"
+        redirect_to root_url
+      end
     end
 end
