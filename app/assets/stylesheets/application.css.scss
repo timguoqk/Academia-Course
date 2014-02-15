@@ -26,12 +26,17 @@ $grid-gutter-width: 0px;
 // Academia Custom Styles
 @import 'academia.css.scss';
 
+$nprogress-color: lighten($blue-link,30%);
+@import 'nprogress';
+@import 'nprogress-bootstrap';
+
 body {
 	-webkit-font-smoothing: antialiased !important;
 	font-family: roboto,arial,sans-serif !important;
   padding-top: 60px;
   background-color: rgb(229, 229, 229);
 }
+a:hover{ text-decoration:none !important; }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;

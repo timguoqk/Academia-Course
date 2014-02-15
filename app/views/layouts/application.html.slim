@@ -11,8 +11,8 @@ html
   	
   	nav.navbar.navbar-default.navbar-fixed-top.acd role="navigation"
 	    .navbar-header
-	      button.navbar-toggle type="button" id="mobile-menu"
-	        span.sr-only NavBar
+	      button.navbar-toggle type="button" id="mobile-menu" href="/"
+	        span.sr-only NavBar 
 	        span.icon-bar
 	        span.icon-bar
 	        span.icon-bar
@@ -20,8 +20,10 @@ html
 	    .acd.collapse.navbar-collapse#example-navbar
 	      ul.nav.navbar-nav.main
 	        /li = link_to '首页', root_path
-	        li = link_to '选课指南', courses_path
-	        li = link_to '关于', about_path
+	        li class=('active' if controller_name == "courses" && request.path != '/about')
+              = link_to '选课指南', courses_path
+	        li class=('active' if request.path == '/about')
+              = link_to '关于', about_path
 	      ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               li 欢迎您,

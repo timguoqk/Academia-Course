@@ -20,9 +20,11 @@ ft = "你丫服不服本大爷！！！"
 st = "NTR"
 if Rails.env == "development"
   30.times do |i|
+    like = rand(Time.now.to_i) % 100
     course = Course.create!(teacher: teacher, title: title + "#{i}", gpa: gpa,
                    ranking: i, intro_text: intro, gp_text: gpt,
-                   difficulty_text: dt, features_text: ft, subject: st)
+                   difficulty_text: dt, features_text: ft, subject: st,
+                   likes: like,)
     # User.create!(email: "test#{i+1}@stu.pkuschool.edu.cn",
     #              encrypted_password: "whatthefuckareyoudoing?usingtheofficalcode?doyouthinkitisajoke?")
     r = rand(Time.now.to_i) % 30

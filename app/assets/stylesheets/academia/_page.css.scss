@@ -53,6 +53,7 @@
 						h3.title {
 							margin: 0;
 							border: 0;
+							padding-left: 0 !important;
 							font-size: 14px;
 							font-weight: normal;
 							unicode-bidi: normal;
@@ -217,7 +218,7 @@
 					list-style: none;
 					.content {
 						padding-left: 20px;
-						padding-top: 10px;
+						padding-top: 2px;
 						display: block;
 						cursor: pointer;
 						list-style: none;
@@ -226,6 +227,9 @@
 							padding-left: 65px;
 							padding-top: 10px;
 							font-weight: bold;
+							white-space: normal;
+							line-height: 20px;
+							margin-bottom: 5px !important;
 						}
 						.sub-title {
 							padding-left: 65px;
@@ -233,10 +237,12 @@
 							font-size: 12px;
 							font-weight: normal;
 							color: #999;
+							white-space: normal;
+							line-height: 14px;
 						}
 					}
 					.number {
-						padding: 30px;
+						padding: 30px 25px;
 						font-size: 20px;
 						font-weight: normal;
 						position: absolute;
