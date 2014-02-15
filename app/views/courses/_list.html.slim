@@ -1,12 +1,12 @@
-ul.acd.list.page
+/disable turbolink because of error in BaiduShare
+ul.acd.list.page.data-no-turbolink
           - i = 0
           - for course in @courses
             li.acd.list.item
-              .number = i + 1
+              - i = i + 1
+              .number = i
               .content
                 .title
                   = link_to course.title, course_path(id: course)
                 .sub-title
-                  == course.features_text
-                .sub-title
-                  = course.subject
+                  = truncate(strip_tags(course.features_text), length: 60)

@@ -1,6 +1,8 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
-  before_action :set_courses, only: [:welcome, :list_rank, :list_all, :index]
+  before_action :set_courses, only: [:welcome, :list_rank_humanity, :list_rank_nature, :list_all, :index]
+  before_action :check_dev, only: [:edit, :update, :new, :destroy]
+
   def about
     
   end
@@ -9,9 +11,14 @@ class CoursesController < ApplicationController
 
   end
 
-  def list_rank
-    @courses = @courses.select { |e| e.ranking !=0  }
-    @courses.sort { |a,b| a.ranking <=> b.ranking }
+  def list_rank_humanity
+    @courses = @courses.select { |e| e.ranking !=0 && e.subject == '人文' }
+    @courses = @courses.sort_by { |e| e.ranking }
+  end
+
+  def list_rank_nature
+    @courses = @courses.select { |e| e.ranking !=0 && e.subject == '自然' }
+    @courses = @courses.sort_by { |e| e.ranking }
   end
 
   def list_all
@@ -102,6 +109,12 @@ class CoursesController < ApplicationController
     
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:teacher, :photo, :title, :gpa, :grade, :intro_text, :gp_text, :difficulty_text, :features_text, :likes, :ranking, :room, :position, :stu_quantity)
+      params.require(:course).permit(:teacher, :photo, :title, :gpa, :grade, :intro_text, :gp_text, :difficulty_text, :features_text, :likes, :ranking, :subject, :room, :position, :stu_quantity)
+    end
+
+    def check_dev
+      if Rails.env!="development"
+        redirect_to root_url
+      end
     end
 end

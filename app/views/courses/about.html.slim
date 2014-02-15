@@ -2,9 +2,42 @@ javascript:
   $("#example-navbar .navbar-nav li a[href*='about']").parent().addClass("active")
 
 .container
-	.row
+  .row
     .about-header
     div
       .col-md-10
-
+        .acd.page
+          .acd.main.content
+            .body
+              .title
+                .content
+                  header.acd
+                    h3.title
+                      a.title Academia，一个理想
+                    span.sub.title
+                      span.subject 2014-01-23 19:32
+              .acd.article
+                .description
+                  .text
+                    .content
+                      <div class="blog-content"><p>        <span><span>Academia</span><strong></strong>致力于</span></p><p>        <span style="line-height: 1.5;">在北大附中创造一个有活力的学术环境&nbsp;</span></p><p>        <span style="line-height: 1.5;">在北大附中的校园文化中渗透学术气息</span></p><p>        <span style="line-height: 1.5;">在北大附中的所有师生间传播学科思想</span></p><p>        <span>                 <br>         </span></p><p>        <span>经过了很久的忙碌，北大附中Academia终于成立了。</span></p><p>        <span>Academia的前身是<span>Fascinating Science的杂志编辑部，Ministry Of Discipline。</span></span></p><p>        <span><span>现在，我们是Academia，以一个全新的面貌来见大家。</span></span></p><p>        <span><span>                         <br>                 </span></span></p><p>Academia是我们每一个人的梦。北大附中应该是一个多元化的社会，它应是艺术的天堂，体育的天堂，更应是学术的天堂。但是事实好像并非如此，我们在高一的时候看见的各种各样的学术社团相继倒闭，而如今北大附中好像更沉浸在各种各样的书院杯，艺术节日中，而不是在学术钻研上。于是我们创造了Ministry of Dicspline，希望通过Fanscinating Science来吸引更多人的目光，去传播知识，传播学科思想。但是Fanscinating Science的影响力远远低于我们的预想。</p><p>&nbsp;</p><p>之后我们发现我们应该去寻求一些跟我们正常的学习生活更加贴近的东西。于是我们盖头换面，成为了Academia。但是我们仍然会做我们想要做的事情，那就是增强学术氛围，传播学科思想，因为这是我们的一个理想，我们要把北大附中的学术环境变活起来。</p><p>&nbsp;</p><p>为了这个我们做了很多。Academia的网络平台正在架设，在第四学段之前它会完工。</p><p>这将是北大附中功能最为完善的学术平台，</p><p>里面会有学霸们专门为你写的复习资料，</p><p>里面会有北大附中课程排名（Course Ranking，根据学生评价还有难度等等不同指标指定的一个综合排名），</p><p>还有每一个课程的数据及其详细的介绍，</p><p>里面更会有北大附中最大的论文平台，</p><p>当然还少不了学术趣闻和新闻，</p><p>还有简单易懂的科普文章和人们有趣的观点，</p><p>有辟谣，有论坛，有课程建议，有在线答疑。</p><p>最后，你还可以把你自己的得意的论文提交上来，在论文库中让以后很多届的学弟学妹们都看见你为他们所留下的一切。</p><p>&nbsp;</p><p>关注我们，我们就会告诉你，我们为什么值得关注。</p><p>这里每天有各个领域的文章更新，</p><p>这里有最多样的知识等你来拥抱，</p><p>这里还有<span style="line-height: 1.5;">一个</span><span style="line-height: 1.5;">有水平，更</span><span style="line-height: 1.5;">有责任心</span><span style="line-height: 1.5;">的团队，</span></p><p>我们每天任何时刻都可以回答你的问题。</p><p>&nbsp;</p><p>我们每一个人都是追梦者，而我们的梦想，更多的就是实现你们的梦想，以我们自己的方式。</p><p>让我们一起圆梦，一起去追逐我们的理想</p><p>Academia，一个理想</p><p>&nbsp;</p><p>        <span>--</span></p><p>        <strong>文/ 章程</strong></p><p>        <strong>from Academia</strong></p><p>&nbsp;</p><p>        <span style="font-size: 10.0pt;font-family: Times New Roman;"><em>Academia, The&nbsp;Affiliated&nbsp;</em><em>High-school&nbsp;of&nbsp;</em><em>Peking University&nbsp;</em></span></p><p>        <strong>                 <br>         </strong></p><p>        <strong>Academia consists of：孙逸天，桂枫，丛润川，韩逸伦，姜思成，章程，曹斯特，董玎玎，张文欣，陈紫晟，郭琦琨</strong></p><p>        <span style="line-height: 1.5;">Contact us:&nbsp;</span><a href="mailto:bdfz_academia@163.com" target="_blank">bdfz_academia@163.com</a></p><p>&nbsp;</p></div><p>Website designed by <a href='https://github.com/timguoqk'>Qikun Guo</a> and <a href='https://github.com/cassiuschen'>Zisheng Chen</a>, members of the <a href='http://www.thecmw.cn'>Creative Media Workshop</a>.</p></div>
       .col-md-5.col-md-offset-1
+        .acd.page
+          .acd.comments.main.content
+            .body
+              == render 'help'
+              .acd.article-info-header
+                .acd.title 评论
+              .many.comments
+                .haha.this.is.the.main.things
+                  .here.we.go
+                    .things.go.here
+                      <div id="disqus_thread"></div>
+                      javascript:
+                        var disqus_shortname = 'academia-bdfz';
+                        (function() {
+                          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>

@@ -1,18 +1,21 @@
 AcademiaCourse::Application.routes.draw do
-  get 'courses/list_rank'
-  get 'courses/list_all'
+  get 'courses/list_rank_humanity' => 'courses#list_rank_humanity'
+  get 'courses/list_rank_nature' => 'courses#list_rank_nature'
+  get 'courses/list_all' => 'courses#list_all'
   get 'about' => 'courses#about'
+  get 'courses' => 'courses#list_all'
   devise_for :users
   resources :courses do
     resources :comments
   end
-
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'courses#welcome'
+  #root 'courses#welcome'
+  root 'courses#list_all'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
