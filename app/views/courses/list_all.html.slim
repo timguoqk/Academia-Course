@@ -9,6 +9,8 @@ javascript:
           .acd.title 课程总览
           .acd.subtitle
             |这里是Academia数据库内的全部课程，另有
-            = link_to '课程排名', courses_list_rank_path
+            = link_to '人文课程排名', courses_list_rank_humanity_path
+            |和
+            = link_to '自然课程排名', courses_list_rank_nature_path
             |可供参考
         == render 'list'

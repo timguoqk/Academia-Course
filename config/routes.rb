@@ -1,5 +1,6 @@
 AcademiaCourse::Application.routes.draw do
-  get 'courses/list_rank' => 'courses#list_rank'
+  get 'courses/list_rank_humanity' => 'courses#list_rank_humanity'
+  get 'courses/list_rank_nature' => 'courses#list_rank_nature'
   get 'courses/list_all' => 'courses#list_all'
   get 'about' => 'courses#about'
   get 'courses' => 'courses#list_all'
