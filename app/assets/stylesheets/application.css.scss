@@ -26,6 +26,10 @@ $grid-gutter-width: 0px;
 // Academia Custom Styles
 @import 'academia.css.scss';
 
+$nprogress-color: lighten($blue-link,30%);
+@import 'nprogress';
+@import 'nprogress-bootstrap';
+
 body {
 	-webkit-font-smoothing: antialiased !important;
 	font-family: roboto,arial,sans-serif !important;

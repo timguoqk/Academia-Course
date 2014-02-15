@@ -1,11 +1,11 @@
-/disable turbolink because of error in BaiduShare
+/disable turbolink because of error in BaiduShare <- so this is a WTF thing. fix it out!
 ul.acd.list.page.data-no-turbolink
           - i = 0
           - for course in @courses
             li.acd.list.item
               - i = i + 1
               .number = i
-              .content
+              .content href="/courses/#{course.id}"
                 .title
                   = link_to course.title, course_path(id: course)
                 .sub-title
