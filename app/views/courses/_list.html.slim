@@ -1,5 +1,5 @@
 /disable turbolink because of error in BaiduShare
-ul.acd.list.page.data-no-turbolink
+ul.acd.list.page
           - i = 0
           - for course in @courses
             li.acd.list.item
@@ -7,6 +7,6 @@ ul.acd.list.page.data-no-turbolink
               .number = i
               .content
                 .title
-                  = link_to course.title, course_path(id: course)
+                  = link_to course.title, course_path(id: course), data: {no_turbolink: true}
                 .sub-title
                   = truncate(strip_tags(course.features_text), length: 60)
