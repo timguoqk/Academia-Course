@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
 
   def list_rank
     @courses = @courses.select { |e| e.ranking !=0  }
-    @courses.sort { |a,b| a.ranking < b.ranking }
+    @courses.sort { |a,b| a.ranking <=> b.ranking }
   end
 
   def list_all

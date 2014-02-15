@@ -6,8 +6,10 @@ default: &default
   host: localhost
 development:
   <<: *default
-  database: academia_dev
+  database: a_dev_1
 test:
   <<: *default
-  database: academia_test
-production: <%= ENV["RAILS_DATABASE_URL"] %>
+  database: a_test
+production:
+  <<: *default
+  database: a_dev_1
