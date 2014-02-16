@@ -8,5 +8,10 @@ ul.acd.list.page.data-no-turbolink
               .content href="/courses/#{course.id}"
                 .title
                   = link_to course.title, course_path(id: course), data: {no_turbolink: true}
+                  - if Rails.env == 'development'
+                    | &ensp;&ensp;
+                    = link_to '(编辑', edit_course_path(course)
+                    | &ensp;/&ensp;
+                    = link_to '删除)', course, data: {:confirm => '你确定么？'}, :method => :delete
                 .sub-title
                   = truncate(strip_tags(course.features_text), length: 60)

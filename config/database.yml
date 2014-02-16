@@ -2,15 +2,14 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: discourse
-  password: 9527serverpwd
+  username: postgres
   host: localhost
 development:
   <<: *default
-  database: academia_dev_tmp2
+  database: a_dev_1
 test:
   <<: *default
-  database: academia_test
+  database: a_test_1
 production:
   <<: *default
-  database: academia_dev_tmp2
+  database: a_dev_1
