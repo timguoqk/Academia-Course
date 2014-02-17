@@ -22,3 +22,8 @@ module AcademiaCourse
     config.i18n.default_locale = 'zh-CN'
   end
 end
+
+CASClient::Frameworks::Rails::Filter.configure(
+  :cas_base_url => "http://bdfz-cas.pkuschool.edu.cn:80/cas/",
+  :validate_url => "http://bdfz-cas.pkuschool.edu.cn:80/cas/serviceValidate"
+)

@@ -113,7 +113,7 @@ class CoursesController < ApplicationController
     end
 
     def check_dev
-      if Rails.env!="development"
+      if Rails.env != "development"
         redirect_to root_url
       end
     end
