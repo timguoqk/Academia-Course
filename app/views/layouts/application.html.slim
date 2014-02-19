@@ -7,7 +7,7 @@ html
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = javascript_include_tag "#{controller_name}", "data-turbolinks-track" => true 
     = csrf_meta_tags
-  body class=("#{controller_name} #{action_name}") data-controller-name="#{controller_name} #{request.path}"
+  body class=("#{session[:cas_user]} #{controller_name} #{action_name} #{@current_user}") data-controller-name="#{controller_name} #{request.path}"
   	
   	nav.navbar.navbar-default.navbar-fixed-top.acd role="navigation"
 	    .navbar-header
@@ -25,15 +25,18 @@ html
 	        li class=('active' if request.path == '/about')
               = link_to '关于', about_path
 	      ul.nav.navbar-nav.navbar-right
-            - if user_signed_in?
+            - unless @current_user.nil?
               li
-                | 欢迎您,
-                = current_user.username
-              li = link_to '登出', destroy_user_session_path
+                a
+                  | 欢迎您,
+                  = @current_user.name
+              li = link_to '登出', logout_path
             - else
-              li = link_to '登录', new_user_session_path
+              li = link_to "登陆", login_path
     == yield
 
     footer.acd
       .col-md-14.col-md-offset-1
                       p Website designed by <a href='https://github.com/timguoqk'>Qikun Guo</a> and <a href='https://github.com/cassiuschen'>Cassius Chen</a>, members of the <a href='http://www.thecmw.cn'>Creative Media Workshop</a>.
+                      = debug(params) if Rails.env.development?
+

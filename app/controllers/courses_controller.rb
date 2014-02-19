@@ -2,6 +2,7 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
   before_action :set_courses, only: [:welcome, :list_rank_humanity, :list_rank_nature, :list_all, :index]
   before_action :check_dev, only: [:edit, :update, :new, :destroy]
+  before_action CASClient::Frameworks::Rails::Filter, :login_with_cas, except: [:list_all , :list_rank_humanity , :list_rank_nature]
 
   def about
     

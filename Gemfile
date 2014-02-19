@@ -33,6 +33,7 @@ gem 'nprogress-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 gem 'jquery-turbolinks'
+#gem 'activerecord-postgres-hstore'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -61,7 +62,7 @@ gem 'piet'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
-gem 'devise'
+#gem 'devise'
 
 # Others
 gem 'kaminari'
